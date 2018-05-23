@@ -1,13 +1,16 @@
 # Simple_Dynamo
 
 Implemented a simplified version of Amazon Dynamo DB.
+
 Implemented a disrtibuted key-value pair storage system that could handle crash-recovery failure.
+
 Used Android Studio to create 5 android emulators using AVDs to simulate a phone, tablet, etc.
 Each port has a server constantly-on and listening in the background for messages, by running an async task on each node.
 On each AVD theres also a client process running which creates a connection with or opens a socket to the port it needs to
 contact and sends messages back and forth.
 
 The three main concepts that were implemented are : 1) Partitioning, 2) Replication, and 3) Crash-recovery Failure handling.
+
 The main goal is to provide both availability and linearizability at the same time. Essentially it should always perform read 
 and write operations successfully even under failures. At the same time, a read operation should always return the most recent 
 value.
